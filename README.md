@@ -267,6 +267,6 @@ mosquitto_sub \
 
 **Пример дашборда** *(Grafana)*
 
-Импортируйте `JSON template` из директории `grafana` [(*скрин дашборда*)](images/dashboards.png).
+Импортируйте `JSON template` из директории `grafana` [(*скрин*)](images/dashboards.png).
 
 ---
