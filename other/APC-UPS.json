@@ -1,0 +1,61 @@
+{
+  "exposes": [
+    "upsstatus",
+    "linev",
+    "load",
+    "bcharge",
+    "timeleft"
+  ],
+  "real": true,
+  "options": {
+    "bcharge": {
+      "class": "battery",
+      "round": 0,
+      "type": "sensor",
+      "unit": "%"
+    },
+    "linev": {
+      "class": "voltage",
+      "round": 1,
+      "type": "sensor",
+      "unit": "V"
+    },
+    "load": {
+      "round": 1,
+      "type": "sensor",
+      "unit": "%"
+    },
+    "timeleft": {
+      "round": 1,
+      "type": "sensor",
+      "unit": "min"
+    },
+    "upsstatus": {
+      "type": "sensor"
+    }
+  },
+  "bindings": {
+    "bcharge": {
+      "inPattern": "{{ json.bcharge }}",
+      "inTopic": "ups/deb2bot/state"
+    },
+    "linev": {
+      "inPattern": "{{ json.linev }}",
+      "inTopic": "ups/deb2bot/state"
+    },
+    "load": {
+      "inPattern": "{{ json.load }}",
+      "inTopic": "ups/deb2bot/state"
+    },
+    "timeleft": {
+      "inPattern": "{{ json.timeleft }}",
+      "inTopic": "ups/deb2bot/state"
+    },
+    "upsstatus": {
+      "inPattern": "{{ json.status }}",
+      "inTopic": "ups/deb2bot/state"
+    }
+  },
+  "availabilityTopic": "ups/deb2bot/availability",
+  "availabilityPattern": "{{ online if value == 'online' else offline }}"
+}
